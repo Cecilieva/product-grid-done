@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from "react-router";
-import "./App.css";
 import NavigationBar from "./components/NavigationsBar.jsx";
 import HomePage from "./Page/HomePage";
 import ProductsPage from "./Page/ProductPage";
