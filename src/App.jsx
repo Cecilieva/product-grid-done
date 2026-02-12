@@ -1,15 +1,20 @@
+import { Navigate, Route, Routes } from "react-router";
 import "./App.css";
-import ProductGrid from "./components/ProductGrid";
+import NavigationBar from "./components/NavigationsBar.jsx";
+import HomePage from "./Page/HomePage";
+import ProductsPage from "./Page/ProductPage";
+import ProductDetailPage from "./Page/ProductDetailPage";
 
 function App() {
   return (
     <>
-      <header>
-        <h1>Products</h1>
-      </header>
-      <main>
-        <ProductGrid />
-      </main>
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products/:id" element={<ProductDetailPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </>
   );
 }
